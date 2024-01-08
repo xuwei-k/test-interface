@@ -36,7 +36,7 @@ public final class TestSelector extends Selector implements Serializable {
     boolean retVal = false;
     if (o instanceof TestSelector) {
       TestSelector ts = (TestSelector) o;
-      retVal = ts._testName == _testName;
+      retVal = ts._testName.equals(_testName);
     }
     return retVal;
   }

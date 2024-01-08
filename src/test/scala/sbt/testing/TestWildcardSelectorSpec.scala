@@ -14,6 +14,7 @@ class TestWildcardSelectorSpec extends UnitSpec {
     def `should have a properly behaving equals method` {
       redTestWildcardSelector shouldEqual redTestWildcardSelector
       redTestWildcardSelector shouldEqual new TestWildcardSelector("red")
+      redTestWildcardSelector shouldEqual new TestWildcardSelector(red())
       redTestWildcardSelector should not equal new TestWildcardSelector("blue")
       redTestWildcardSelector should not equal null
       redTestWildcardSelector should not equal "howdy"

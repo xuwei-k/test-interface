@@ -22,6 +22,7 @@ class NestedTestSelectorSpec extends UnitSpec {
     def `should have a properly behaving equals method` {
       redBirdNestedTestSelector shouldEqual redBirdNestedTestSelector
       redBirdNestedTestSelector shouldEqual new NestedTestSelector("red", "bird")
+      redBirdNestedTestSelector shouldEqual new NestedTestSelector(red(), "bird")
       redBirdNestedTestSelector should not equal blueBirdNestedTestSelector
       redBirdNestedTestSelector should not equal redFishNestedTestSelector
       redBirdNestedTestSelector should not equal blueFishNestedTestSelector

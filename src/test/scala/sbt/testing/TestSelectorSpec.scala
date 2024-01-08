@@ -14,6 +14,7 @@ class TestSelectorSpec extends UnitSpec {
     def `should have a properly behaving equals method` {
       redTestSelector shouldEqual redTestSelector
       redTestSelector shouldEqual new TestSelector("red")
+      redTestSelector shouldEqual new TestSelector(red())
       redTestSelector should not equal new TestSelector("blue")
       redTestSelector should not equal null
       redTestSelector should not equal "howdy"

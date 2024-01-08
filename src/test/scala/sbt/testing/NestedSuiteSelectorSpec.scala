@@ -14,6 +14,7 @@ class NestedSuiteSelectorSpec extends UnitSpec {
     def `should have a properly behaving equals method` {
       redNestedSuiteSelector shouldEqual redNestedSuiteSelector
       redNestedSuiteSelector shouldEqual new NestedSuiteSelector("red")
+      redNestedSuiteSelector shouldEqual new NestedSuiteSelector(red())
       redNestedSuiteSelector should not equal new NestedSuiteSelector("blue")
       redNestedSuiteSelector should not equal null
       redNestedSuiteSelector should not equal "howdy"

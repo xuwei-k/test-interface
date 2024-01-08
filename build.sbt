@@ -13,21 +13,22 @@ crossPaths := false
 
 autoScalaLibrary := false
 
-resolvers ++= Seq("releases" at "http://oss.sonatype.org/content/repositories/releases",
-                  "snapshots" at "http://oss.sonatype.org/content/repositories/snapshots",
-                  "localmaven" at "file://"+Path.userHome+"/.m2/repository")
-
-publishTo <<= version { v: String =>
+publishTo := {
+  val v = version.value
   val nexus = "https://oss.sonatype.org/"
   if (v.trim.endsWith("SNAPSHOT")) Some("publish-snapshots" at nexus + "content/repositories/snapshots")
   else                             Some("publish-releases" at nexus + "service/local/staging/deploy/maven2")
 }
 
-libraryDependencies += "org.scalatest" % "scalatest_2.10" % "2.0.M6-SNAP24" % "test"
+libraryDependencies += "org.scalatest" % "scalatest_2.10" % "2.0" % Test
 
 publishMavenStyle := true
 
-publishArtifact in Test := false
+// Tests must be forked in this repo; otherwise the tests will use the classes from sbt.testing._
+// provided by sbt rather than the ones compiled from these sources.
+Test / fork := true
+
+Test / publishArtifact := false
 
 pomIncludeRepository := { _ => false }
 
