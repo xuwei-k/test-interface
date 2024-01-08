@@ -36,7 +36,7 @@ public final class NestedSuiteSelector extends Selector implements Serializable 
     boolean retVal = false;
     if (o instanceof NestedSuiteSelector) {
       NestedSuiteSelector nss = (NestedSuiteSelector) o;
-      retVal = nss._suiteId == _suiteId;
+      retVal = nss._suiteId.equals(_suiteId);
     }
     return retVal;
   }

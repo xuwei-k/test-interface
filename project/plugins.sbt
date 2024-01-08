@@ -1,1 +1,1 @@
-addSbtPlugin("com.typesafe.sbt" % "sbt-pgp" % "0.8")
+addSbtPlugin("com.github.sbt" % "sbt-pgp" % "2.2.1")

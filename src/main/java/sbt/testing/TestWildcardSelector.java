@@ -49,7 +49,7 @@ public final class TestWildcardSelector extends Selector implements Serializable
     boolean retVal = false;
     if (o instanceof TestWildcardSelector) {
       TestWildcardSelector tws = (TestWildcardSelector) o;
-      retVal = tws._testWildcard == _testWildcard;
+      retVal = tws._testWildcard.equals(_testWildcard);
     }
     return retVal;
   }
