@@ -6,7 +6,7 @@ version := "1.0"
 
 description := "Uniform test interface to Scala/Java test frameworks (specs, ScalaCheck, ScalaTest, JUnit and other)"
 
-scalaVersion := "2.13.15"
+scalaVersion := "2.13.17"
 
 // disable using the Scala version in output paths and artifacts
 crossPaths := false
